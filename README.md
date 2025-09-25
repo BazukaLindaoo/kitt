@@ -134,6 +134,15 @@ tween.Completed:Connect(function()
     wait(0.15)
     screenGui:Destroy()
 end)
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer(table.unpack({
+    [1] = "RolePlayBio",
+    [2] = "[ KITK4T ] X Hub",
+}))
+
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer(table.unpack({
+    [1] = "RolePlayName",
+    [2] = "[ Kkt Hub User ]",
+}))
 
 
 delay(3, function()
@@ -145,7 +154,7 @@ local Window = redzlib:MakeWindow({
 })
 
 Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://0", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://105882266197529", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -154,7 +163,7 @@ local Tab1 = Window:MakeTab({"Credits", "info"})
 Tab1:AddDiscordInvite({
     Name = "KitK4t Hub X | Nova Era",
     Description = "KitKat Nova Era : X",
-    Logo = "rbxassetid://0",
+    Logo = "rbxassetid://105882266197529",
     Invite = "https://discord.gg/C6n3FyaB8D",
 })
 
@@ -180,24 +189,24 @@ local Tab3 = Window:MakeTab({"Som de tool", "Home"})
 
 local Section = Tab3:AddSection({"PRECISA EQUIPAR A GUITARRA E VIOLÃO PRA FUNCIONAR"})
 Tab3:AddButton({
-		Name = "SOM DE GUITARRA", 
-		Callback = function()
-			local args = {
-	"ElectricGuitarMusic1"
+        Name = "SOM DE GUITARRA", 
+        Callback = function()
+            local args = {
+    "ElectricGuitarMusic1"
 }
 game:GetService("Players").LocalPlayer.Character:WaitForChild("ElectricGuitar"):WaitForChild("ToolSound"):FireServer(unpack(args))
-		end
-	})
+        end
+    })
 
 Tab3:AddButton({
-		Name = "SOM DE VIOLÃO", 
-		Callback = function()
-			local args = {
-	"GuitarMusic1"
+        Name = "SOM DE VIOLÃO", 
+        Callback = function()
+            local args = {
+    "GuitarMusic1"
 }
 game:GetService("Players").LocalPlayer:WaitForChild("Backpack"):WaitForChild("Guitar"):WaitForChild("ToolSound"):FireServer(unpack(args))
-		end
-	})
+        end
+    })
 
 
 
@@ -3002,11 +3011,45 @@ local audios = {
     {Name = "Uh Que Nojo", ID = 103440368630269},
     {Name = "Sai dai Lava Prato", ID = 101232400175829},
     {Name = "Seloko num compensa", ID = 78442476709262},
-    --{Name = "Chimpanzini Bananini Funk", ID = 137148228908678},
-    --{Name = "Candyland Tobu", ID = 118939739460633},
+    {Name = "Chimpanzini Bananini Funk", ID = 137148228908678},
+    {Name = "Candyland Tobu", ID = 118939739460633},
     {Name = "Meme do Dom pollo What the hell", ID = 100656590080703},
     {Name = "Não to entendendo nada Estourado", ID = 7962533987},
     {Name = "Cachorro Rindo", ID = 8449305114},
+    {Name = "Yamete Kudasai", ID = 108494476595033},
+    {Name = "Gritinho", ID = 5710016194},
+    {Name = "Jumpscare Horroroso", ID = 85435253347146},
+    {Name = "Áudio Alto", ID = 6855150757},
+    {Name = "Ruído", ID = 120034877160791},
+    {Name = "Jumpscare 2", ID = 110637995610528},
+    {Name = "Risada Da Bruxa Minecraft", ID = 116214940486087},
+    {Name = "The Boiled One", ID = 137177653817621},
+    {Name = "Deitei Um Ave Maria Doido", ID = 128669424001766},
+    {Name = "Mandrake Detected", ID = 9068077052},
+    {Name = "Aaaaaaaaa", ID = 80156405968805},
+    {Name = "AAAHHHH", ID = 9084006093},
+    {Name = "amongus", ID = 6651571134},
+    {Name = "Sus", ID = 6701126635},
+    {Name = "Gritao AAAAAAAAA", ID = 5853668794},
+    {Name = "UHHHHH COFFCOFF", ID = 7056720271},
+    {Name = "SUS", ID = 7153419575},
+    {Name = "Sonic.exe", ID = 2496367477},
+    {Name = "Tubers93 1", ID = 270145703},
+    {Name = "Tubers93 2", ID = 18131809532},
+    {Name = "John's Laugh", ID = 130759239},
+    {Name = "Nao sei KKKK", ID = 6549021381},
+    {Name = "Grito", ID = 80156405968805},
+    {Name = "audio estranho", ID = 7705506391},
+    {Name = "AAAH", ID = 7772283448},
+    {Name = "Gay, gay", ID = 18786647417},
+    {Name = "Bat Hit", ID = 7129073354},
+    {Name = "Nuclear Siren", ID = 675587093},
+    {Name = "Sem ideia de nome KK", ID = 7520729342},
+    {Name = "Grito 2", ID = 91412024101709},
+    {Name = "Estora tímpano", ID = 268116333},
+    {Name = "Toma Jack", ID = 132603645477541},
+    {Name = "Pede ifood pede", ID = 133843750864059},
+    {Name = "(NEW) não to ent
 }
 
 local selectedAudioID
@@ -3231,21 +3274,21 @@ Fly.TextScaled = true
 Fly.TextSize = 14.000
 Fly.TextWrapped = true
 Fly.MouseButton1Click:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	Fly.Visible = false
-	Stat2.Text = "On"
-	Stat2.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Unfly.Visible = true
-	Flyon.Visible = true
-	local BV = Instance.new("BodyVelocity",HumanoidRP)
-	local BG = Instance.new("BodyGyro",HumanoidRP)
-	BV.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
-	game:GetService('RunService').RenderStepped:connect(function()
-	BG.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
-	BG.D = 5000
-	BG.P = 100000
-	BG.CFrame = game.Workspace.CurrentCamera.CFrame
-	end)
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    Fly.Visible = false
+    Stat2.Text = "On"
+    Stat2.TextColor3 = Color3.fromRGB(0, 255, 0)
+    Unfly.Visible = true
+    Flyon.Visible = true
+    local BV = Instance.new("BodyVelocity",HumanoidRP)
+    local BG = Instance.new("BodyGyro",HumanoidRP)
+    BV.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+    game:GetService('RunService').RenderStepped:connect(function()
+    BG.MaxTorque = Vector3.new(math.huge,math.huge,math.huge)
+    BG.D = 5000
+    BG.P = 100000
+    BG.CFrame = game.Workspace.CurrentCamera.CFrame
+    end)
 end)
 
 Speeed.Name = "Speeed"
@@ -3302,15 +3345,15 @@ Unfly.TextScaled = true
 Unfly.TextSize = 14.000
 Unfly.TextWrapped = true
 Unfly.MouseButton1Click:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	Fly.Visible = true
-	Stat2.Text = "Off"
-	Stat2.TextColor3 = Color3.fromRGB(255, 0, 0)
-	wait()
-	Unfly.Visible = false
-	Flyon.Visible = false
-	HumanoidRP:FindFirstChildOfClass("BodyVelocity"):Destroy()
-	HumanoidRP:FindFirstChildOfClass("BodyGyro"):Destroy()
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    Fly.Visible = true
+    Stat2.Text = "Off"
+    Stat2.TextColor3 = Color3.fromRGB(255, 0, 0)
+    wait()
+    Unfly.Visible = false
+    Flyon.Visible = false
+    HumanoidRP:FindFirstChildOfClass("BodyVelocity"):Destroy()
+    HumanoidRP:FindFirstChildOfClass("BodyGyro"):Destroy()
 end)
 
 Vfly.Name = "Vfly"
@@ -3338,7 +3381,7 @@ Close.TextScaled = true
 Close.TextSize = 14.000
 Close.TextWrapped = true
 Close.MouseButton1Click:Connect(function()
-	Flymguiv2:Destroy()
+    Flymguiv2:Destroy()
 end)
 
 Minimize.Name = "Minimize"
@@ -3354,13 +3397,13 @@ Minimize.TextScaled = true
 Minimize.TextSize = 14.000
 Minimize.TextWrapped = true
 function Mini()
-	if Minimize.Text == "-" then
-		Minimize.Text = "+"
-		FlyFrame.Visible = false
-	elseif Minimize.Text == "+" then
-		Minimize.Text = "-"
-		FlyFrame.Visible = true
-	end
+    if Minimize.Text == "-" then
+        Minimize.Text = "+"
+        FlyFrame.Visible = false
+    elseif Minimize.Text == "+" then
+        Minimize.Text = "-"
+        FlyFrame.Visible = true
+    end
 end
 Minimize.MouseButton1Click:Connect(Mini)
 
@@ -3387,53 +3430,53 @@ W.TextScaled = true
 W.TextSize = 14.000
 W.TextWrapped = true
 W.TouchLongPress:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
 end)
 
 W.MouseButton1Click:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
 end)
 
 S.Name = "S"
@@ -3450,52 +3493,52 @@ S.TextScaled = true
 S.TextSize = 14.000
 S.TextWrapped = true
 S.TouchLongPress:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
 end)
 
 S.MouseButton1Click:Connect(function()
-	local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
-	wait(.1)
-	HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
+    local HumanoidRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * -Speed.Text
+    wait(.1)
+    HumanoidRP.BodyVelocity.Velocity = game.Workspace.CurrentCamera.CFrame.LookVector * 0
 end)
     end
 })
@@ -3733,4 +3776,4 @@ Tab:AddButton({
 })
 
 
-	end)
+    end)
